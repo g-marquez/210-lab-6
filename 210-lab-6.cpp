@@ -25,8 +25,8 @@ int main()
     return 0;
 }
 
-// enterArray() takes a dynamically allocated double array of size SIZE and 
-// populates it with values that the user enters via the console.
+// enterArray() takes a dynamic double array and populates it with values that
+// the user enters via the console.
 // arguments: a double array pointer
 // returns: n/a
 void enterArray(double *arr)

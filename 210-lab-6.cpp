@@ -26,6 +26,9 @@ int main()
     outputArrayData(dptr);
     sum = sumArray(dptr);
 
+    //output sum of elements of dynamic double array
+    cout << "Sum of values: " << sum;
+
     delete [] dptr;
     return 0;
 }
@@ -54,10 +57,18 @@ void outputArrayData(double *arr)
     cout << "Outputting array elements: ";
     for (int i = 0; i < SIZE; ++i)
         cout << *(arr + i) << " ";
+    cout << endl;
 }
 
 // sumArray() receives a dynamic double array and both calculates and returns
 // its sum.
 // arguments: a dynamic double array
 // returns: the sum of all elements of the dynamic double array
-double sumArray(double *arr);
+double sumArray(double *arr)
+{
+    double sum = 0;
+    for (int i = 0; i < SIZE; ++i)
+        sum += *(arr + i);
+
+    return sum;
+}

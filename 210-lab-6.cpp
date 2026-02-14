@@ -45,6 +45,8 @@ void enterArrayData(double *arr)
     {
         cout << "\t> Element #" << i << ": ";
         cin >> *(arr + i); //allows inputs such as "1..1"
+                            //actually just assigns the ".1" at the end to the next element
+                            //still messes up output
     }
     cout << "Data entry complete." << endl;
 }

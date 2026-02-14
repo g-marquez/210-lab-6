@@ -6,3 +6,24 @@
 
 #include <iostream>
 using namespace std;
+
+const int SIZE = 5;
+
+void enterArray(double *);
+void outputArray(double *);
+double sumArray(double *);
+
+int main()
+{
+    double *dptr = nullptr;
+    dptr = new double[SIZE];
+
+    
+
+    return 0;
+}
+
+void enterArray( double *arr)
+{
+
+}

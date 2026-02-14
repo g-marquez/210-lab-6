@@ -12,6 +12,7 @@ const int SIZE = 5;
 void enterArrayData(double *);
 void outputArrayData(double *);
 double sumArray(double *);
+double validateEntry(string);
 
 int main()
 {
@@ -45,7 +46,8 @@ void enterArrayData(double *arr)
         cout << "\t> Element #" << i << ": ";
         string entry;
         getline(cin, entry); //allows inputs such as "1..1" - trying getline()
-        *(arr + i) = stod(entry);//checking if try/catch blocks allowed
+        validateEntry(entry);
+        //*(arr + i) = stod(entry);//checking if try/catch blocks allowed
         // if (!*(arr + i) = stod(entry)) //figuring out syntax
         // {
 
@@ -78,3 +80,7 @@ double sumArray(double *arr)
 
     return sum;
 }
+// validateEntry() receives a string and validates if it can be converted to a
+// double.
+// arguments: a string to be validated
+// returns: the sum of all elements of the dynamic double array

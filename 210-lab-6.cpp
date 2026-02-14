@@ -34,8 +34,8 @@ int main()
     return 0;
 }
 
-// enterArray() takes a dynamic double array and populates it with values that
-// the user enters via the console.
+// enterArray() takes a dynamic double array and populates it with validated
+// values that the user enters via the console.
 // arguments: a dynamic double array
 // returns: n/a
 void enterArrayData(double *arr)
@@ -43,8 +43,8 @@ void enterArrayData(double *arr)
     cout << "Data entry for the array:" << endl;
     for (int i = 0; i < SIZE; ++i)
     {
-        bool loop_again = true;
-        while (loop_again = true)
+        bool stop_loop = false;
+        while (!stop_loop)
         {
             try
             {
@@ -52,18 +52,13 @@ void enterArrayData(double *arr)
                 string entry;
                 getline(cin, entry);
                 *(arr + i) = stod(entry);
-                loop_again = false;
+                stop_loop = true;
             }
             catch(const invalid_argument& e)
             {
                 cerr << "Error: please make sure entry is a valid double." << endl;
             }
         }
-        //*(arr + i) = stod(entry);//checking if try/catch blocks allowed
-        // if (!*(arr + i) = stod(entry)) //figuring out syntax
-        // {
-
-        // }
     }
     cout << "Data entry complete." << endl;
 }

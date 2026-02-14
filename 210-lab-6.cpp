@@ -23,9 +23,9 @@ int main()
     return 0;
 }
 
-// enterArray() dynamically allocates a double array of size SIZE and 
+// enterArray() takes a dynamically allocated double array of size SIZE and 
 // populates it with values that the user enters via the console.
-// arguments: n/a
+// arguments: a double array pointer
 // returns: n/a
 void enterArray(double *arr)
 {
@@ -33,6 +33,7 @@ void enterArray(double *arr)
     for (int i = 0; i < SIZE; ++i)
     {
         cout << "\t> Element #" << i << ": ";
-        cin >> 
+        cin >> *(arr + i);
     }
+    cout << "Data entry complete." << endl;
 }

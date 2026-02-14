@@ -49,12 +49,16 @@ void enterArrayData(double *arr)
                 cout << "\t> Element #" << i << ": ";
                 string entry;
                 getline(cin, entry);
-                *(arr + i) = stod(entry);
+
+                //check if entry can be converted to a double
+                // stop loop if valid
+                *(arr + i) = stod(entry); 
                 stop_loop = true;
             }
             catch(const invalid_argument& e)
             {
-                cerr << "Error: please enter a valid decimal or whole number." << endl;
+                cerr << "Error: please enter a valid decimal or whole number."
+                     << endl;
             }
         }
     }

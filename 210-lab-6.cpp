@@ -10,7 +10,7 @@ using namespace std;
 const int SIZE = 5;
 
 void enterArray(double *);
-void outputArray(double *);
+void outputArrayData(double *);
 double sumArray(double *);
 
 int main()
@@ -19,7 +19,9 @@ int main()
     dptr = new double[SIZE];
 
     enterArray(dptr);
+    outputArrayData(dptr);
 
+    delete [] dptr;
     return 0;
 }
 
@@ -36,4 +38,15 @@ void enterArray(double *arr)
         cin >> *(arr + i);
     }
     cout << "Data entry complete." << endl;
+}
+
+// outputArrayData() receives a dynamic double array and outputs its contents 
+// on one line.
+// arguments: a double array pointer
+// returns: n/a
+void outputArrayData(double *arr)
+{
+    cout << "Outputting array elements: ";
+    for (int i = 0; i < SIZE; ++i)
+        cout << *(arr + i) << " ";
 }

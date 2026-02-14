@@ -28,6 +28,7 @@ int main()
 
     //output sum of elements of dynamic double array
     cout << "Sum of values: " << sum;
+    cout << endl << *(dptr);
 
     delete [] dptr;
     return 0;
@@ -43,8 +44,7 @@ void enterArrayData(double *arr)
     for (int i = 0; i < SIZE; ++i)
     {
         cout << "\t> Element #" << i << ": ";
-        cin >> *(arr + i); //allows inputs such as 1..1
-        if (*(arr + i) != )
+        cin >> *(arr + i); //allows inputs such as "1..1"
     }
     cout << "Data entry complete." << endl;
 }

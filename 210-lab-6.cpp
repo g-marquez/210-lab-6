@@ -9,7 +9,7 @@ using namespace std;
 
 const int SIZE = 5;
 
-double* enterArray();
+void enterArray(double *);
 void outputArray(double *);
 double sumArray(double *);
 
@@ -18,12 +18,16 @@ int main()
     double *dptr = nullptr;
     dptr = new double[SIZE];
 
-    dptr = enterArray();
+    enterArray(dptr);
 
     return 0;
 }
 
-double* enterArray()
+// enterArray() dynamically allocates a double array of size SIZE and 
+// populates it with values that the user enters via the console.
+// arguments: n/a
+// returns: n/a
+void enterArray(double *arr)
 {
     cout << "Data entry for the array:" << endl;
     for (int i = 0; i < SIZE; ++i)

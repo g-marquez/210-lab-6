@@ -43,7 +43,8 @@ void enterArrayData(double *arr)
     for (int i = 0; i < SIZE; ++i)
     {
         cout << "\t> Element #" << i << ": ";
-        cin >> *(arr + i);
+        cin >> *(arr + i); //allows inputs such as 1..1
+        if (*(arr + i) != )
     }
     cout << "Data entry complete." << endl;
 }

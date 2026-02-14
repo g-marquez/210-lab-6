@@ -9,17 +9,22 @@ using namespace std;
 
 const int SIZE = 5;
 
-void enterArray(double *);
+void enterArrayData(double *);
 void outputArrayData(double *);
 double sumArray(double *);
 
 int main()
 {
+    double sum;
+
+    //dynamically allocate a double array of size SIZE
     double *dptr = nullptr;
     dptr = new double[SIZE];
 
-    enterArray(dptr);
+    //pass dynamic double array to the following functions
+    enterArrayData(dptr);
     outputArrayData(dptr);
+    sum = sumArray(dptr);
 
     delete [] dptr;
     return 0;
@@ -27,9 +32,9 @@ int main()
 
 // enterArray() takes a dynamic double array and populates it with values that
 // the user enters via the console.
-// arguments: a double array pointer
+// arguments: a dynamic double array
 // returns: n/a
-void enterArray(double *arr)
+void enterArrayData(double *arr)
 {
     cout << "Data entry for the array:" << endl;
     for (int i = 0; i < SIZE; ++i)
@@ -42,7 +47,7 @@ void enterArray(double *arr)
 
 // outputArrayData() receives a dynamic double array and outputs its contents 
 // on one line.
-// arguments: a double array pointer
+// arguments: a dynamic double array
 // returns: n/a
 void outputArrayData(double *arr)
 {
@@ -50,3 +55,9 @@ void outputArrayData(double *arr)
     for (int i = 0; i < SIZE; ++i)
         cout << *(arr + i) << " ";
 }
+
+// sumArray() receives a dynamic double array and both calculates and returns
+// its sum.
+// arguments: a dynamic double array
+// returns: the sum of all elements of the dynamic double array
+double sumArray(double *arr);

@@ -44,9 +44,12 @@ void enterArrayData(double *arr)
     for (int i = 0; i < SIZE; ++i)
     {
         cout << "\t> Element #" << i << ": ";
-        cin >> *(arr + i); //allows inputs such as "1..1"
-                            //actually just assigns the ".1" at the end to the next element
-                            //still messes up output
+        string entry;
+        getline(cin, entry); //allows inputs such as "1..1" - trying getline()
+        if (!*(arr + i) = stod(entry)) //figuring out syntax
+        {
+
+        }
     }
     cout << "Data entry complete." << endl;
 }

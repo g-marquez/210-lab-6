@@ -43,20 +43,22 @@ void enterArrayData(double *arr)
     cout << "Data entry for the array:" << endl;
     for (int i = 0; i < SIZE; ++i)
     {
-        cout << "\t> Element #" << i << ": ";
-        string entry;
-        getline(cin, entry); //allows inputs such as "1..1" - trying getline()
-        try
+        bool loop_again = true;
+        while (loop_again = true)
         {
-            *(arr + i) = stod(entry);
+            try
+            {
+                cout << "\t> Element #" << i << ": ";
+                string entry;
+                getline(cin, entry);
+                *(arr + i) = stod(entry);
+                loop_again = false;
+            }
+            catch(const invalid_argument& e)
+            {
+                cerr << "Error: please make sure entry is a valid double." << endl;
+            }
         }
-        catch(const invalid_argument& e)
-        {
-            cerr << "Error: please make sure entry is a valid double." << endl;
-            cout << "\t> Element #" << i << ": ";
-            getline(cin, entry); //not quite working
-        }
-        
         //*(arr + i) = stod(entry);//checking if try/catch blocks allowed
         // if (!*(arr + i) = stod(entry)) //figuring out syntax
         // {

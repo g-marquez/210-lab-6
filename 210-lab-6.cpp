@@ -12,12 +12,9 @@ const int SIZE = 5;
 void enterArrayData(double *);
 void outputArrayData(double *);
 double sumArray(double *);
-double validateEntry(string);
 
 int main()
 {
-    double sum;
-
     //dynamically allocate a double array of size SIZE
     double *dptr = nullptr;
     dptr = new double[SIZE];
@@ -25,12 +22,13 @@ int main()
     //pass dynamic double array to the following functions
     enterArrayData(dptr);
     outputArrayData(dptr);
+    double sum;
     sum = sumArray(dptr);
 
     //output sum of elements of dynamic double array
     cout << "Sum of values: " << sum;
 
-    delete [] dptr;
+    delete [] dptr; //being responsible with our memory
     return 0;
 }
 
@@ -56,7 +54,7 @@ void enterArrayData(double *arr)
             }
             catch(const invalid_argument& e)
             {
-                cerr << "Error: please make sure entry is a valid double." << endl;
+                cerr << "Error: please enter a valid decimal or whole number." << endl;
             }
         }
     }

@@ -52,10 +52,9 @@ void enterArrayData(double *arr)
         }
         catch(const invalid_argument& e)
         {
-            std::cerr << "Error: please make sure entry is a valid double"
-                      << e.what() << endl;
+            cerr << "Error: please make sure entry is a valid double." << endl;
             cout << "\t> Element #" << i << ": ";
-            getline(cin, entry);
+            getline(cin, entry); //not quite working
         }
         
         //*(arr + i) = stod(entry);//checking if try/catch blocks allowed
